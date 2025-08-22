@@ -1,0 +1,30 @@
+# === SH-GPC (compat mode) ===
+# Ranges chosen around your target versions to keep packages interoperable.
+# Python >= 3.10 is recommended.
+
+# Core
+numpy>=1.24,<2.1
+pandas>=2.0,<2.2
+scikit-learn>=1.5,<1.7
+matplotlib>=3.7,<3.9
+statsmodels>=0.14,<0.15
+shap>=0.45,<0.46
+joblib>=1.2,<2.0
+seaborn>=0.12,<0.14
+
+# Boosting / Trees
+xgboost>=2.0,<2.1
+lightgbm>=4.5,<4.7
+catboost>=1.2,<1.3
+
+# Probabilistic boosting
+ngboost>=0.3.12,<0.4
+# If NGBoost complains about scikit-learn >=1.5 on your setup,
+# pin scikit-learn to <1.5 temporarily, e.g. scikit-learn==1.3.2
+
+# Deep / TabNet
+torch>=2.5,<2.6
+# For CUDA builds, install torch with the specific +cuXXX wheel from PyTorch:
+#   pip install torch==2.5.1+cu124 -f https://download.pytorch.org/whl/torch_stable.html
+# Otherwise, the CPU wheel is fine.
+pytorch-tabnet>=4.1,<4.2
